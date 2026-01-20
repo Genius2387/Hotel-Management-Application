@@ -20,6 +20,15 @@
       "password": "abc123",
       "role": "user",
       "id": 3
+    },
+    {
+      "name": "Kunal",
+      "email": "kunal@gmail.com",
+      "phone": "",
+      "password": "kunal123",
+      "role": "user",
+      "createdAt": "2026-01-17T08:09:05.050Z",
+      "id": 4
     }
   ],
   "rooms": [
@@ -141,6 +150,24 @@
       "status": "confirmed",
       "bookedAt": "2026-01-16T14:09:29.827Z",
       "id": 4
+    },
+    {
+      "userId": 4,
+      "name": "Kunal",
+      "room": "Executive Suite",
+      "fromDate": "2026-01-18",
+      "toDate": "2026-01-24",
+      "guests": 1,
+      "phone": "1234567890",
+      "specialRequests": "",
+      "pricePerNight": 399,
+      "numberOfNights": 6,
+      "totalPrice": 2394,
+      "status": "confirmed",
+      "bookedAt": "2026-01-17T08:09:56.263Z",
+      "id": 5,
+      "paymentMethod": "card",
+      "paidAt": "2026-01-17T08:10:09.076Z"
     }
   ],
   "messages": [
@@ -156,9 +183,8 @@
     }
   ],
   "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview"
-}
-
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
 }

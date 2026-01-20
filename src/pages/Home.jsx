@@ -1,95 +1,143 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import "./Home.css";
 
 function Home() {
-  const features = [
-    { icon: '🏨', title: '5-Star Luxury', desc: 'Premium hospitality experience' },
-    { icon: '🍽️', title: 'Fine Dining', desc: 'World-class cuisine' },
-    { icon: '🏊', title: 'Spa & Pool', desc: 'Relaxation facilities' },
-    { icon: '🚗', title: 'Free Parking', desc: 'Valet service available' }
-  ];
-
   return (
-    <section className="min-vh-100 d-flex align-items-center position-relative" style={{
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      color: 'white'
-    }}>
-      <div className="container py-5">
-        <div className="text-center mb-5">
-          <span className="badge bg-light bg-opacity-25 text-white px-4 py-2 mb-3" style={{
-            backdropFilter: 'blur(10px)',
-            border: '1px solid rgba(255,255,255,0.3)'
-          }}>
-            ✨ Welcome to Paradise
-          </span>
-          
-          <h1 className="display-1 fw-bold mb-3">
-            Grand Hotel
-            <span className="d-block" style={{
-              background: 'linear-gradient(90deg, #fff, #f0f0f0)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent'
-            }}>
-              Luxury Redefined
-            </span>
-          </h1>
-          
-          <p className="lead mb-4 mx-auto" style={{maxWidth: '700px'}}>
-            Experience the perfect blend of elegance, comfort, and world-class hospitality in the heart of the city
+    <>
+      {/* HERO SECTION */}
+      <section className="hero-section d-flex align-items-center text-white">
+        <div className="container text-center">
+          <h1 className="display-4 fw-bold">Experience Luxury & Comfort</h1>
+          <p className="lead mt-3">
+            Book premium rooms with world-class hospitality
           </p>
-          
-          <div className="d-flex gap-3 justify-content-center mb-5">
-            <NavLink className="btn btn-light btn-lg rounded-pill px-4" to="/rooms">
-              Explore Rooms
-            </NavLink>
-            <NavLink className="btn btn-outline-light btn-lg rounded-pill px-4" to="/login">
-              Book Now
-            </NavLink>
-          </div>
+          <Link to="/rooms" className="btn btn-light btn-lg mt-4 px-5">
+            Explore Rooms
+          </Link>
+        </div>
+      </section>
 
-          <div className="row g-4 mt-4">
-            {features.map((feature, index) => (
-              <div key={index} className="col-md-6 col-lg-3">
-                <div className="p-3 rounded-3" style={{
-                  background: 'rgba(255,255,255,0.15)',
-                  backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(255,255,255,0.2)'
-                }}>
-                  <div className="d-flex align-items-center gap-3">
-                    <span style={{fontSize: '2.5rem'}}>{feature.icon}</span>
-                    <div className="text-start">
-                      <h5 className="mb-1">{feature.title}</h5>
-                      <small>{feature.desc}</small>
-                    </div>
-                  </div>
-                </div>
+      {/* ABOUT SUMMARY */}
+      <section className="py-5 bg-light">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-md-6 mb-4 mb-md-0">
+              <h2 className="fw-bold">Welcome to Our Hotel</h2>
+              <p className="text-muted mt-3">
+                We provide luxurious rooms, modern amenities, and exceptional
+                service to make your stay unforgettable. Whether you are here
+                for business or leisure, we ensure comfort at every step.
+              </p>
+              <Link to="/about" className="btn btn-primary mt-3">
+                Learn More
+              </Link>
+            </div>
+            <div className="col-md-6">
+              <img
+                src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+                alt="Hotel"
+                className="img-fluid rounded shadow"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURES */}
+      <section className="py-5">
+        <div className="container text-center">
+          <h2 className="fw-bold mb-5">Why Choose Us</h2>
+
+          <div className="row g-4">
+            <div className="col-md-4">
+              <div className="feature-card p-4 shadow-sm h-100">
+                <h4 className="fw-bold">Luxury Rooms</h4>
+                <p className="text-muted">
+                  Spacious rooms with premium interiors and comfort.
+                </p>
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
 
-        <div className="d-flex justify-content-center align-items-center gap-4 p-4 rounded-3 mx-auto mt-5" style={{
-          maxWidth: '800px',
-          background: 'rgba(255,255,255,0.1)',
-          backdropFilter: 'blur(10px)',
-          border: '1px solid rgba(255,255,255,0.2)'
-        }}>
-          <div className="text-center">
-            <h2 className="display-4 fw-bold mb-0">250+</h2>
-            <p className="mb-0">Luxury Rooms</p>
-          </div>
-          <div style={{width: '2px', height: '60px', background: 'rgba(255,255,255,0.3)'}}></div>
-          <div className="text-center">
-            <h2 className="display-4 fw-bold mb-0">25+</h2>
-            <p className="mb-0">Years Excellence</p>
-          </div>
-          <div style={{width: '2px', height: '60px', background: 'rgba(255,255,255,0.3)'}}></div>
-          <div className="text-center">
-            <h2 className="display-4 fw-bold mb-0">50K+</h2>
-            <p className="mb-0">Happy Guests</p>
+            <div className="col-md-4">
+              <div className="feature-card p-4 shadow-sm h-100">
+                <h4 className="fw-bold">24/7 Services</h4>
+                <p className="text-muted">
+                  Round-the-clock room service and customer support.
+                </p>
+              </div>
+            </div>
+
+            <div className="col-md-4">
+              <div className="feature-card p-4 shadow-sm h-100">
+                <h4 className="fw-bold">Prime Location</h4>
+                <p className="text-muted">
+                  Located near major attractions and transport hubs.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* ROOMS CTA */}
+      <section className="cta-section text-white text-center py-5">
+        <div className="container">
+          <h2 className="fw-bold">Ready to Book Your Stay?</h2>
+          <p className="mt-2">
+            Choose from a variety of rooms designed for every need.
+          </p>
+          <Link to="/rooms" className="btn btn-outline-light btn-lg mt-3 px-5">
+            Book Now
+          </Link>
+        </div>
+      </section>
+
+      {/* SERVICES PREVIEW */}
+      <section className="py-5 bg-light">
+        <div className="container">
+          <h2 className="fw-bold text-center mb-5">Our Services</h2>
+
+          <div className="row g-4">
+            <div className="col-md-3">
+              <div className="service-box text-center p-4 shadow-sm">
+                <h5 className="fw-bold">Free Wi-Fi</h5>
+              </div>
+            </div>
+
+            <div className="col-md-3">
+              <div className="service-box text-center p-4 shadow-sm">
+                <h5 className="fw-bold">Restaurant</h5>
+              </div>
+            </div>
+
+            <div className="col-md-3">
+              <div className="service-box text-center p-4 shadow-sm">
+                <h5 className="fw-bold">Swimming Pool</h5>
+              </div>
+            </div>
+
+            <div className="col-md-3">
+              <div className="service-box text-center p-4 shadow-sm">
+                <h5 className="fw-bold">Spa & Wellness</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT CTA */}
+      <section className="py-5 text-center">
+        <div className="container">
+          <h2 className="fw-bold">Need Help With Booking?</h2>
+          <p className="text-muted mt-2">
+            Our team is here to assist you anytime.
+          </p>
+          <Link to="/contact" className="btn btn-primary btn-lg mt-3">
+            Contact Us
+          </Link>
+        </div>
+      </section>
+    </>
   );
 }
 

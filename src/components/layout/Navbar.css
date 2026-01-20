@@ -1,0 +1,14 @@
+.navbar .nav-link {
+  color: #ddd;
+  margin-right: 8px;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #fff;
+}
+
+.navbar-brand {
+  letter-spacing: 1px;
+}
