@@ -1,6 +1,7 @@
 .navbar .nav-link {
   color: #ddd;
-  margin-right: 8px;
+  margin: 0 10px;
+  font-weight: 500;
   transition: color 0.3s ease;
 }
 
@@ -11,4 +12,10 @@
 
 .navbar-brand {
   letter-spacing: 1px;
+}
+
+@media (max-width: 991px) {
+  .navbar-nav {
+    text-align: center;
+  }
 }

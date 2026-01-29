@@ -98,19 +98,66 @@ function Register() {
 
   return (
     <div 
-      className="d-flex align-items-center justify-content-center py-4"
+      className="min-vh-100 d-flex align-items-center justify-content-center py-5 position-relative overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+        background: "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)"
       }}
     >
-      <div className="container">
+      {/* Animated Background Shapes */}
+      <div className="position-absolute w-100 h-100" style={{ zIndex: 0 }}>
+        <div 
+          className="position-absolute rounded-circle"
+          style={{
+            width: "500px",
+            height: "500px",
+            background: "rgba(103, 126, 234, 0.1)",
+            top: "-150px",
+            right: "-100px",
+            animation: "float 7s ease-in-out infinite"
+          }}
+        ></div>
+        <div 
+          className="position-absolute rounded-circle"
+          style={{
+            width: "350px",
+            height: "350px",
+            background: "rgba(118, 75, 162, 0.1)",
+            bottom: "-100px",
+            left: "-80px",
+            animation: "float 9s ease-in-out infinite reverse"
+          }}
+        ></div>
+        <div 
+          className="position-absolute"
+          style={{
+            width: "250px",
+            height: "250px",
+            background: "rgba(255, 255, 255, 0.03)",
+            top: "40%",
+            left: "5%",
+            borderRadius: "40% 60% 60% 40% / 40% 40% 60% 60%",
+            animation: "float 11s ease-in-out infinite"
+          }}
+        ></div>
+        
+        {/* Decorative Hotel Icons */}
+        <div className="position-absolute" style={{ top: "10%", left: "10%", opacity: 0.1, fontSize: "3.5rem" }}>🌟</div>
+        <div className="position-absolute" style={{ top: "25%", right: "8%", opacity: 0.08, fontSize: "2.8rem" }}>🏨</div>
+        <div className="position-absolute" style={{ bottom: "20%", left: "8%", opacity: 0.1, fontSize: "3rem" }}>✨</div>
+        <div className="position-absolute" style={{ bottom: "15%", right: "12%", opacity: 0.08, fontSize: "2.5rem" }}>🛎️</div>
+        <div className="position-absolute" style={{ top: "60%", right: "25%", opacity: 0.06, fontSize: "2rem" }}>💎</div>
+      </div>
+
+      <div className="container position-relative" style={{ zIndex: 1 }}>
         <div className="row justify-content-center">
           <div className="col-md-7 col-lg-6">
             {/* Register Card */}
-            <div className="card shadow-lg border-0" style={{ borderRadius: "10px" }}>
-              <div className="card-body p-4">
+            <div className="card shadow-lg border-0 backdrop-blur" style={{ borderRadius: "20px", background: "rgba(255, 255, 255, 0.95)" }}>
+              <div className="card-body p-5">
                 {/* Logo/Header */}
                 <div className="text-center mb-2">
+                  <div className="mb-0">
+                  </div>
                   <h2 className="fw-bold mb-2">Create Account</h2>
                   <p className="text-muted">Join OceanView Hotel today!</p>
                 </div>
@@ -281,7 +328,7 @@ function Register() {
                     style={{
                       background: "linear-gradient(45deg, #667eea, #764ba2)",
                       border: "none",
-                      borderRadius: "5px"
+                      borderRadius: "10px"
                     }}
                   >
                     {loading ? (
@@ -320,9 +367,30 @@ function Register() {
               </div>
             </div>
 
+            {/* Additional Info */}
+            <div className="text-center mt-4 text-white">
+              <p className="small mb-2 opacity-75">
+                🔒 Your information is safe and encrypted
+              </p>
+            </div>
           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-20px) rotate(5deg);
+          }
+        }
+
+        .backdrop-blur {
+          backdrop-filter: blur(10px);
+        }
+      `}</style>
     </div>
   );
 }

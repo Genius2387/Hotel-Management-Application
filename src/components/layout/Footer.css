@@ -1,10 +1,84 @@
+.footer {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #e0e0e0;
+  padding-top: 60px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-top {
+  padding-bottom: 40px;
+}
+
+.footer-brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.footer-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #cfd8dc;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .footer-links li {
-  color: #bbb;
-  margin-bottom: 6px;
-  cursor: pointer;
-  transition: color 0.3s ease;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #cfd8dc;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-links li a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .footer-links li:hover {
-  color: #fff;
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+.footer-contact {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #cfd8dc;
+}
+
+.social-icons {
+  margin-top: 12px;
+}
+
+.social-icons span {
+  display: inline-block;
+  margin-right: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icons span:hover {
+  transform: translateY(-3px);
+  opacity: 0.8;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.85rem;
+  color: #b0bec5;
 }

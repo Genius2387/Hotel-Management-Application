@@ -1,55 +1,70 @@
 import "./Footer.css";
+import { useLocation } from 'react-router-dom';
 
 function Footer() {
+  const location = useLocation();
+  
+  // Hide footer on login and register pages
+  const hideFooterRoutes = ['/login', '/register'];
+  
+  if (hideFooterRoutes.includes(location.pathname)) {
+    return null;
+  }
   return (
-    <footer className="footer bg-dark text-light mt-auto">
-      <div className="container py-5">
-        <div className="row">
-          {/* About */}
+    <footer className="footer mt-auto">
+      <div className="container">
+        <div className="row footer-top">
+          
+          {/* Brand */}
           <div className="col-md-4 mb-4">
-            <h5 className="fw-bold">OceanView Hotel</h5>
-            <p className="text-muted small">
-              LuxeStay is a premium hotel booking platform offering luxury rooms,
-              world-class services, and a seamless booking experience.
+            <h5 className="footer-brand">OceanView Hotel</h5>
+            <p className="footer-text">
+              OceanView Hotel is a premium luxury destination offering elegant
+              rooms, world-class hospitality, and unforgettable experiences.
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="col-md-2 mb-4">
-            <h6 className="fw-bold">Quick Links</h6>
-            <ul className="list-unstyled footer-links">
-              <li>Home</li>
-              <li>Rooms</li>
-              <li>Services</li>
-              <li>Gallery</li>
-              <li>Contact</li>
+            <h6 className="footer-title">Quick Links</h6>
+            <ul className="footer-links">
+              <li><a href="/">Home</a></li>
+              <li><a href="/rooms">Rooms</a></li>
+              <li><a href="/services">Services</a></li>
+              <li><a href="/gallery">Gallery</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
 
           {/* Services */}
           <div className="col-md-3 mb-4">
-            <h6 className="fw-bold">Our Services</h6>
-            <ul className="list-unstyled footer-links">
+            <h6 className="footer-title">Our Services</h6>
+            <ul className="footer-links">
               <li>Luxury Rooms</li>
               <li>Spa & Wellness</li>
-              <li>Restaurant</li>
+              <li>Fine Dining</li>
               <li>Conference Hall</li>
-              <li>24/7 Support</li>
+              <li>24/7 Customer Support</li>
             </ul>
           </div>
 
           {/* Contact */}
           <div className="col-md-3 mb-4">
-            <h6 className="fw-bold">Contact Us</h6>
-            <p className="small text-muted mb-1">📍 Kolhapur, India</p>
-            <p className="small text-muted mb-1">📞 +91 98765 43210</p>
-            <p className="small text-muted">✉️ support@luxestay.com</p>
+            <h6 className="footer-title">Contact Us</h6>
+            <p className="footer-contact">📍 Kolhapur, India</p>
+            <p className="footer-contact">📞 +91 98765 43210</p>
+            <p className="footer-contact">✉️ support@oceanviewhotel.com</p>
+
+            <div className="social-icons">
+              <span>🌐</span>
+              <span>📘</span>
+              <span>📸</span>
+              <span>🐦</span>
+            </div>
           </div>
         </div>
 
-        <hr className="border-secondary" />
-
-        <div className="text-center small text-muted">
+        <div className="footer-bottom">
           © {new Date().getFullYear()} OceanView Hotel. All rights reserved.
         </div>
       </div>

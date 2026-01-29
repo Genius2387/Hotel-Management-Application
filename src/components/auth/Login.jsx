@@ -46,19 +46,65 @@ function Login() {
 
   return (
     <div 
-      className="d-flex align-items-center justify-content-center py-3"
+      className="min-vh-100 d-flex align-items-center justify-content-center py-5 position-relative overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+        background: "linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%)"
       }}
     >
-      <div className="container">
+      {/* Animated Background Shapes */}
+      <div className="position-absolute w-100 h-100" style={{ zIndex: 0 }}>
+        <div 
+          className="position-absolute rounded-circle"
+          style={{
+            width: "400px",
+            height: "400px",
+            background: "rgba(255, 255, 255, 0.05)",
+            top: "-100px",
+            left: "-100px",
+            animation: "float 6s ease-in-out infinite"
+          }}
+        ></div>
+        <div 
+          className="position-absolute rounded-circle"
+          style={{
+            width: "300px",
+            height: "300px",
+            background: "rgba(255, 255, 255, 0.05)",
+            bottom: "-50px",
+            right: "-50px",
+            animation: "float 8s ease-in-out infinite"
+          }}
+        ></div>
+        <div 
+          className="position-absolute"
+          style={{
+            width: "200px",
+            height: "200px",
+            background: "rgba(255, 255, 255, 0.03)",
+            top: "50%",
+            right: "10%",
+            borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%",
+            animation: "float 10s ease-in-out infinite"
+          }}
+        ></div>
+        
+        {/* Hotel Icons Pattern */}
+        <div className="position-absolute" style={{ top: "20%", left: "15%", opacity: 0.1, fontSize: "3rem" }}>🏨</div>
+        <div className="position-absolute" style={{ bottom: "30%", left: "10%", opacity: 0.08, fontSize: "2.5rem" }}>🛏️</div>
+        <div className="position-absolute" style={{ top: "15%", right: "20%", opacity: 0.1, fontSize: "2rem" }}>🔑</div>
+        <div className="position-absolute" style={{ bottom: "25%", right: "15%", opacity: 0.08, fontSize: "2.8rem" }}>⭐</div>
+      </div>
+
+      <div className="container position-relative" style={{ zIndex: 1 }}>
         <div className="row justify-content-center">
           <div className="col-md-6 col-lg-5">
             {/* Login Card */}
-            <div className="card shadow-lg border-0" style={{ borderRadius: "10px" }}>
-              <div className="card-body p-4">
+            <div className="card shadow-lg border-0 backdrop-blur" style={{ borderRadius: "20px", background: "rgba(255, 255, 255, 0.95)" }}>
+              <div className="card-body p-5">
                 {/* Logo/Header */}
                 <div className="text-center mb-4">
+                  <div className="mb-0">
+                  </div>
                   <h2 className="fw-bold mb-2">Welcome Back!</h2>
                   <p className="text-muted">Sign in to continue to OceanView Hotel</p>
                 </div>
@@ -113,7 +159,6 @@ function Login() {
 
                   {/* Remember Me & Forgot Password */}
                   <div className="d-flex justify-content-between align-items-center mb-4">
-                    
                     <a 
                       href="#" 
                       className="text-decoration-none small"
@@ -135,7 +180,7 @@ function Login() {
                     style={{
                       background: "linear-gradient(45deg, #667eea, #764ba2)",
                       border: "none",
-                      borderRadius: "5px"
+                      borderRadius: "10px"
                     }}
                   >
                     {loading ? (
@@ -173,9 +218,31 @@ function Login() {
                 </form>
               </div>
             </div>
+
+            {/* Additional Info */}
+            <div className="text-center mt-4 text-white">
+              <p className="small mb-2 opacity-75">
+                🔒 Your data is secure and encrypted
+              </p>
+            </div>
           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-20px) rotate(5deg);
+          }
+        }
+
+        .backdrop-blur {
+          backdrop-filter: blur(10px);
+        }
+      `}</style>
     </div>
   );
 }

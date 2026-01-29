@@ -168,6 +168,24 @@
       "id": 5,
       "paymentMethod": "card",
       "paidAt": "2026-01-17T08:10:09.076Z"
+    },
+    {
+      "userId": 2,
+      "name": "Genius",
+      "room": "Executive Suite",
+      "fromDate": "2026-01-30",
+      "toDate": "2026-01-31",
+      "guests": 1,
+      "phone": "1234567890",
+      "specialRequests": "",
+      "pricePerNight": 399,
+      "numberOfNights": 1,
+      "totalPrice": 399,
+      "status": "confirmed",
+      "bookedAt": "2026-01-29T09:16:05.470Z",
+      "id": 6,
+      "paymentMethod": "card",
+      "paidAt": "2026-01-29T09:16:08.604Z"
     }
   ],
   "messages": [

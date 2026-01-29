@@ -13,7 +13,8 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
       <div className="container">
-        {/* Brand */}
+
+        {/* BRAND (LEFT) */}
         <Link className="navbar-brand fw-bold fs-4" to="/">
           🏨 OceanView
         </Link>
@@ -28,61 +29,47 @@ function Navbar() {
         </button>
 
         <div className="collapse navbar-collapse" id="mainNavbar">
-          {/* LEFT MENU */}
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            {/* Show common links only for users */}
+
+          {/* CENTER MENU */}
+          <ul className="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
             {!user || user.role === "user" ? (
               <>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/">
-                    Home
-                  </NavLink>
+                  <NavLink className="nav-link" to="/">Home</NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/rooms">
-                    Rooms
-                  </NavLink>
+                  <NavLink className="nav-link" to="/rooms">Rooms</NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/about">
-                    About
-                  </NavLink>
+                  <NavLink className="nav-link" to="/about">About</NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/services">
-                    Services
-                  </NavLink>
+                  <NavLink className="nav-link" to="/services">Services</NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/gallery">
-                    Gallery
-                  </NavLink>
+                  <NavLink className="nav-link" to="/gallery">Gallery</NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/contact">
-                    Contact
-                  </NavLink>
+                  <NavLink className="nav-link" to="/contact">Contact</NavLink>
                 </li>
+                {user && (
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/my-bookings">My Bookings</NavLink>
+                </li>
+                )}
               </>
             ) : null}
 
-            {/* Admin menu */}
             {user?.role === "admin" && (
               <>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/admin/dashboard">
-                    Dashboard
-                  </NavLink>
+                  <NavLink className="nav-link" to="/admin/dashboard">Dashboard</NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/admin/manage-rooms">
-                    Manage Rooms
-                  </NavLink>
+                  <NavLink className="nav-link" to="/admin/manage-rooms">Manage Rooms</NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/admin/view-bookings">
-                    View Bookings
-                  </NavLink>
+                  <NavLink className="nav-link" to="/admin/view-bookings">View Bookings</NavLink>
                 </li>
               </>
             )}
@@ -101,18 +88,18 @@ function Navbar() {
               </>
             ) : (
               <>
+                <span className="text-white small me-2">
+                  Hi, <strong>{user.name}</strong>
+                </span>
+
                 {user.role === "user" && (
                   <NavLink
                     to="/booking"
-                    className="btn btn-warning btn-sm px-3 me-2"
+                    className="btn btn-warning btn-sm px-3"
                   >
                     Book Now
                   </NavLink>
                 )}
-
-                <span className="text-white small me-2">
-                  Hi, <strong>{user.name}</strong>
-                </span>
 
                 <button
                   onClick={handleLogout}
@@ -123,6 +110,7 @@ function Navbar() {
               </>
             )}
           </div>
+
         </div>
       </div>
     </nav>
