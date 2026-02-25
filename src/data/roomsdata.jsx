@@ -2,7 +2,7 @@ import luxury from "../assets/luxury_suite.jpg";
 import family from "../assets/family_room.jpg";
 import single from "../assets/single_room.jpg";
 import couple from "../assets/couple_room.webp";
-import deluxe from "../assets/deluxe_Room.jpg";
+import deluxe from "../assets/deluxe_room.jpg";
 import executive from "../assets/executive_suite.jpg";
 
 const roomsData = [
